@@ -5,3 +5,12 @@ edition = "2024"
 
 [dependencies]
 chip8_core = { path = "../chip8_core" }
+sdl2 = { version = "0.38.0", features = ["use-vcpkg", "static-link"] }
+
+[package.metadata.vcpkg]
+dependencies = ["sdl2"]
+git = "https://github.com/microsoft/vcpkg"
+rev = "2023.10.19"
+
+[package.metadata.vcpkg.target]
+x86_64-pc-windows-msvc = { triplet = "x64-windows-static-md" }
